@@ -24,8 +24,12 @@ const isSubjectPronoun = (subject: string) => {
     }
 }
 
+const capitalizeFirstLetter = (word: string) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 const cleanPhrase = (subject: string, object: string, verb: string) => {
-    return `${subject.trim()} ${object.trim()} ${verb.trim()}`
+    return `${capitalizeFirstLetter(subject.trim())}, ${object.trim()} ${verb.trim()}`
 }
 
 const getYodifiedMessage = (originalMessage: string) => {
